@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 # Connect to Redis
 redis_client = StrictRedis(
-    host='localhost',
+    host='redis.finvedic.in',
     port=6379,
     db=0
 )
@@ -20,4 +20,4 @@ def save_data():
     return jsonify({"message": "Data saved to Redis!"}), 200
 
 if __name__ == "__main__":
-    app.run(port=5002, debug=True)
+    app.run(port=5001, debug=True)
